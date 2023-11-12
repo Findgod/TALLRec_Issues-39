@@ -27,7 +27,7 @@ except:  # noqa: E722
 def main(
     load_8bit: bool = False,
     base_model: str = "decapoda-research/llama-7b-hf",
-    lora_weights: str = "lora-alpaca_movie_64",
+    lora_weights: str = "lora-alpaca_movie_64_3",
     test_data_path: str = "data/movie/test.json",
     result_json_data: str = "temp.json",
     batch_size: int = 32,
