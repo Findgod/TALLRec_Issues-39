@@ -31,9 +31,9 @@ IndexError: list index out of range
     #     )
     # ).__get__(model, type(model))
 ```
-(2)发现如下：
-没有quantization_config时，64个样本训练时间：'train_runtime': 79.9546  
-加上quantization_config时，64个样本训练时间：'train_runtime': 1319.9201  
+(2)发现如下：  
+没有quantization_config时，64个样本、3轮的训练时间：'train_runtime': 79.9546  
+加上quantization_config时，64个样本、3轮的训练时间：'train_runtime': 1319.9201  
 ```python
     # quantization_config = BitsAndBytesConfig(llm_int8_enable_fp32_cpu_offload=True)
 
@@ -44,5 +44,6 @@ IndexError: list index out of range
         device_map=device_map,
         # quantization_config=quantization_config,
     )
-(3)运行finetune_rec.py
+```
+(3)运行finetune_rec.py（64个样本、20轮，训练的时候没有使用quantization_config）  
 获得lora-alpaca_movie_64_3文件夹
