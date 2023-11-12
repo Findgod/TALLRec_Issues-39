@@ -1,3 +1,4 @@
+在微调、评估之前已经使用bitsandbytes==0.37.2, peft==0.3.0, transformers==4.28.0
 ## evaluate2.py
 使用之前的评估文件，获得的auc  "64": 0.4636760882126348  
 ## evaluate.py 
@@ -21,7 +22,7 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 ## finetune_rec.py  
-### (1)去掉下面部分  
+(1)去掉下面部分  
 ```python
     # old_state_dict = model.state_dict
     # model.state_dict = (
@@ -30,7 +31,7 @@ IndexError: list index out of range
     #     )
     # ).__get__(model, type(model))
 ```
-### (2)发现如下：
+(2)发现如下：
 没有quantization_config时，64个样本训练时间：'train_runtime': 79.9546  
 加上quantization_config时，64个样本训练时间：'train_runtime': 1319.9201  
 ```python
@@ -43,4 +44,5 @@ IndexError: list index out of range
         device_map=device_map,
         # quantization_config=quantization_config,
     )
-```
+(3)运行finetune_rec.py
+获得lora-alpaca_movie_64_3文件夹
