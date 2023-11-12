@@ -1,7 +1,25 @@
 ## evaluate2.py
-是之前的评估文件，auc  "64": 0.4636760882126348  
+使用之前的评估文件，获得的auc  "64": 0.4636760882126348  
 ## evaluate.py 
-只修改对应的路径等参数  
+使用这个评估文件，会出现此问题
+```python
+Loading checkpoint shards: 100%|██████████| 33/33 [00:08<00:00,  3.80it/s]
+0it [00:00, ?it/s]Asking to truncate to max_length but no maximum length is provided and the model has no predefined maximum length. Default to no truncation.
+32it [1:40:02, 187.58s/it]
+32it [00:00, ?it/s]
+Traceback (most recent call last):
+  File "D:\mhf\TALLRec\evaluate.py", line 237, in <module>
+    fire.Fire(main)
+  File "D:\Anaconda\envs\alpaca\lib\site-packages\fire\core.py", line 141, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "D:\Anaconda\envs\alpaca\lib\site-packages\fire\core.py", line 475, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "D:\Anaconda\envs\alpaca\lib\site-packages\fire\core.py", line 691, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "D:\mhf\TALLRec\evaluate.py", line 204, in main
+    test_data[i]['logits'] = logits[i]
+IndexError: list index out of range
+```
 ## finetune_rec.py  
 ### (1)去掉下面部分  
 ```python
