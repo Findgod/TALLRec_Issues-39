@@ -39,7 +39,7 @@ def main(
 
     train_sce = 'movie'
     test_sce = 'movie'
-    model_name = 'lora-alpaca_movie_64_2'
+    model_name = 'lora-alpaca_movie_64_3'
     seed = 3
     sample = 64
 
