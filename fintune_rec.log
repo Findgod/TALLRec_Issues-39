@@ -1,0 +1,270 @@
+PS D:\mhf\TALLRec> bash shell/instruct_7B.sh 0 3
+0, 3
+lr: 1e-4, dropout: 0.05 , seed: 3, sample: 64
+
+===================================BUG REPORT===================================
+Welcome to bitsandbytes. For bug reports, please submit your error trace to: https://github.com/TimDettmers/bitsandbytes/issues
+================================================================================
+CUDA SETUP: Loading binary D:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\libbitsandbytes_cuda116.dll...
+Training Alpaca-LoRA model with params:
+base_model: decapoda-research/llama-7b-hf
+train_data_path: data/movie/train.json
+val_data_path: data/movie/valid.json
+sample: 64
+seed: 3
+output_dir: lora-alpaca_movie_3_64
+batch_size: 128
+micro_batch_size: 32
+num_epochs: 200
+learning_rate: 0.0001
+cutoff_len: 512
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.05
+lora_target_modules: ['q_proj', 'v_proj']
+train_on_inputs: True
+group_by_length: True
+wandb_project:
+wandb_run_name:
+wandb_watch:
+wandb_log_model:
+resume_from_checkpoint: None
+
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 33/33 [00:08<00:00,  3.86it/s]
+trainable params: 4194304 || all params: 6742609920 || trainable%: 0.06220594176090199
+Using the `WANDB_DISABLED` environment variable is deprecated and will be removed in v5. Use the --report_to flag to control the integrations used for logging result (for instance --repor
+t_to none).
+  0%|                                                                                                                                                             | 0/200 [00:00<?, ?it/s]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.9421, 'learning_rate': 4e-05, 'epoch': 8.0}
+{'eval_loss': 1.7565666437149048, 'eval_auc': 0.46281928224817365, 'eval_runtime': 72.7501, 'eval_samples_per_second': 13.746, 'eval_steps_per_second': 1.718, 'epoch': 10.0}
+  5%|███████▎                                                                                                                                          | 10/200 [04:30<1:02:07, 19.62s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.8846, 'learning_rate': 8e-05, 'epoch': 16.0}
+{'eval_loss': 1.5314416885375977, 'eval_auc': 0.4492481203007519, 'eval_runtime': 72.7305, 'eval_samples_per_second': 13.749, 'eval_steps_per_second': 1.719, 'epoch': 20.0}
+ 10%|██████████████▌                                                                                                                                   | 20/200 [08:57<1:01:18, 20.44s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.7871, 'learning_rate': 9.777777777777778e-05, 'epoch': 24.0}
+{'eval_loss': 1.1036999225616455, 'eval_auc': 0.5253626086492829, 'eval_runtime': 72.65, 'eval_samples_per_second': 13.765, 'eval_steps_per_second': 1.721, 'epoch': 30.0}
+ 15%|██████████████████████▏                                                                                                                             | 30/200 [13:27<58:12, 20.54s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.6263, 'learning_rate': 9.333333333333334e-05, 'epoch': 32.0}
+{'loss': 0.4159, 'learning_rate': 8.888888888888889e-05, 'epoch': 40.0}
+{'eval_loss': 0.6460205912590027, 'eval_auc': 0.49529630814625214, 'eval_runtime': 72.6586, 'eval_samples_per_second': 13.763, 'eval_steps_per_second': 1.72, 'epoch': 40.0}
+ 20%|█████████████████████████████▌                                                                                                                      | 40/200 [17:56<54:50, 20.56s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.2833, 'learning_rate': 8.444444444444444e-05, 'epoch': 48.0}
+{'eval_loss': 0.4905223548412323, 'eval_auc': 0.4843491707993388, 'eval_runtime': 72.771, 'eval_samples_per_second': 13.742, 'eval_steps_per_second': 1.718, 'epoch': 50.0}
+ 25%|█████████████████████████████████████                                                                                                               | 50/200 [22:25<51:27, 20.59s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.245, 'learning_rate': 8e-05, 'epoch': 56.0}
+{'eval_loss': 0.47481414675712585, 'eval_auc': 0.4993956522511953, 'eval_runtime': 72.7728, 'eval_samples_per_second': 13.741, 'eval_steps_per_second': 1.718, 'epoch': 60.0}
+ 30%|████████████████████████████████████████████▍                                                                                                       | 60/200 [26:55<48:05, 20.61s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.2366, 'learning_rate': 7.555555555555556e-05, 'epoch': 64.0}
+{'eval_loss': 0.46657899022102356, 'eval_auc': 0.48649327218756105, 'eval_runtime': 72.7872, 'eval_samples_per_second': 13.739, 'eval_steps_per_second': 1.717, 'epoch': 70.0}
+ 35%|███████████████████████████████████████████████████▊                                                                                                | 70/200 [31:25<44:39, 20.61s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.2302, 'learning_rate': 7.111111111111112e-05, 'epoch': 72.0}
+{'loss': 0.2242, 'learning_rate': 6.666666666666667e-05, 'epoch': 80.0}
+{'eval_loss': 0.46103569865226746, 'eval_auc': 0.48531790469080505, 'eval_runtime': 72.7957, 'eval_samples_per_second': 13.737, 'eval_steps_per_second': 1.717, 'epoch': 80.0}
+ 40%|███████████████████████████████████████████████████████████▏                                                                                        | 80/200 [35:55<41:13, 20.61s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.2184, 'learning_rate': 6.222222222222222e-05, 'epoch': 88.0}
+{'eval_loss': 0.45712676644325256, 'eval_auc': 0.5127335181926447, 'eval_runtime': 72.7751, 'eval_samples_per_second': 13.741, 'eval_steps_per_second': 1.718, 'epoch': 90.0}
+ 45%|██████████████████████████████████████████████████████████████████▌                                                                                 | 90/200 [40:25<37:47, 20.62s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.2126, 'learning_rate': 5.7777777777777776e-05, 'epoch': 96.0}
+{'eval_loss': 0.45583271980285645, 'eval_auc': 0.5235206811354628, 'eval_runtime': 72.7915, 'eval_samples_per_second': 13.738, 'eval_steps_per_second': 1.717, 'epoch': 100.0}
+ 50%|█████████████████████████████████████████████████████████████████████████▌                                                                         | 100/200 [44:55<34:21, 20.61s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.2066, 'learning_rate': 5.333333333333333e-05, 'epoch': 104.0}
+{'eval_loss': 0.45613226294517517, 'eval_auc': 0.5404757461028458, 'eval_runtime': 72.7234, 'eval_samples_per_second': 13.751, 'eval_steps_per_second': 1.719, 'epoch': 110.0}
+ 55%|████████████████████████████████████████████████████████████████████████████████▊                                                                  | 110/200 [49:25<30:54, 20.60s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.2006, 'learning_rate': 4.888888888888889e-05, 'epoch': 112.0}
+{'loss': 0.1948, 'learning_rate': 4.4444444444444447e-05, 'epoch': 120.0}
+{'eval_loss': 0.4585987329483032, 'eval_auc': 0.5484855756412308, 'eval_runtime': 72.7367, 'eval_samples_per_second': 13.748, 'eval_steps_per_second': 1.719, 'epoch': 120.0}
+ 60%|████████████████████████████████████████████████████████████████████████████████████████▏                                                          | 120/200 [53:55<27:28, 20.61s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.1892, 'learning_rate': 4e-05, 'epoch': 128.0}
+{'eval_loss': 0.4624486565589905, 'eval_auc': 0.5587217156366092, 'eval_runtime': 72.7362, 'eval_samples_per_second': 13.748, 'eval_steps_per_second': 1.719, 'epoch': 130.0}
+ 65%|███████████████████████████████████████████████████████████████████████████████████████████████▌                                                   | 130/200 [58:24<24:02, 20.60s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.184, 'learning_rate': 3.555555555555556e-05, 'epoch': 136.0}
+{'eval_loss': 0.4679149091243744, 'eval_auc': 0.5934828205264935, 'eval_runtime': 72.7498, 'eval_samples_per_second': 13.746, 'eval_steps_per_second': 1.718, 'epoch': 140.0}
+ 70%|█████████████████████████████████████████████████████████████████████████████████████████████████████▌                                           | 140/200 [1:02:54<20:35, 20.60s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.1792, 'learning_rate': 3.111111111111111e-05, 'epoch': 144.0}
+{'eval_loss': 0.47255179286003113, 'eval_auc': 0.605340923230061, 'eval_runtime': 72.7315, 'eval_samples_per_second': 13.749, 'eval_steps_per_second': 1.719, 'epoch': 150.0}
+ 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                    | 150/200 [1:07:24<17:10, 20.60s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.1747, 'learning_rate': 2.6666666666666667e-05, 'epoch': 152.0}
+{'loss': 0.1703, 'learning_rate': 2.2222222222222223e-05, 'epoch': 160.0}
+{'eval_loss': 0.4794599115848541, 'eval_auc': 0.607976057164187, 'eval_runtime': 72.7783, 'eval_samples_per_second': 13.74, 'eval_steps_per_second': 1.718, 'epoch': 160.0}
+ 80%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                             | 160/200 [1:11:54<13:44, 20.60s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.1667, 'learning_rate': 1.777777777777778e-05, 'epoch': 168.0}
+{'eval_loss': 0.4831867516040802, 'eval_auc': 0.611415506852237, 'eval_runtime': 72.7557, 'eval_samples_per_second': 13.745, 'eval_steps_per_second': 1.718, 'epoch': 170.0}
+ 85%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                     | 170/200 [1:16:23<10:18, 20.60s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.1636, 'learning_rate': 1.3333333333333333e-05, 'epoch': 176.0}
+{'eval_loss': 0.48670706152915955, 'eval_auc': 0.616099201905473, 'eval_runtime': 72.7582, 'eval_samples_per_second': 13.744, 'eval_steps_per_second': 1.718, 'epoch': 180.0}
+ 90%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌              | 180/200 [1:20:53<06:51, 20.60s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.1609, 'learning_rate': 8.88888888888889e-06, 'epoch': 184.0}
+{'eval_loss': 0.49092504382133484, 'eval_auc': 0.6082293499706714, 'eval_runtime': 72.7602, 'eval_samples_per_second': 13.744, 'eval_steps_per_second': 1.718, 'epoch': 190.0}
+ 95%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊       | 190/200 [1:25:23<03:26, 20.60s/it]D
+:\Anaconda\envs\alpaca\lib\site-packages\bitsandbytes\autograd\_functions.py:298: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 0.1592, 'learning_rate': 4.444444444444445e-06, 'epoch': 192.0}
+{'loss': 0.1581, 'learning_rate': 0.0, 'epoch': 200.0}
+{'eval_loss': 0.49186956882476807, 'eval_auc': 0.613021916493361, 'eval_runtime': 72.7178, 'eval_samples_per_second': 13.752, 'eval_steps_per_second': 1.719, 'epoch': 200.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 200/200 [1:29:53<00:00, 20.60s/it]T
+here were missing keys in the checkpoint model loaded: ['base_model.model.model.embed_tokens.weight', 'base_model.model.model.layers.0.self_attn.q_proj.weight', 'base_model.model.model.la
+yers.0.self_attn.q_proj.lora_A.default.weight', 'base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight', 'base_model.model.model.layers.0.self_attn.k_proj.weight', 'base_
+model.model.model.layers.0.self_attn.v_proj.weight', 'base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight', 'base_model.model.model.layers.0.self_attn.v_proj.lora_B.def
+ault.weight', 'base_model.model.model.layers.0.self_attn.o_proj.weight', 'base_model.model.model.layers.0.self_attn.rotary_emb.inv_freq', 'base_model.model.model.layers.0.mlp.gate_proj.we
+ight', 'base_model.model.model.layers.0.mlp.down_proj.weight', 'base_model.model.model.layers.0.mlp.up_proj.weight', 'base_model.model.model.layers.0.input_layernorm.weight', 'base_model.
+model.model.layers.0.post_attention_layernorm.weight', 'base_model.model.model.layers.1.self_attn.q_proj.weight', 'base_model.model.model.layers.1.self_attn.q_proj.lora_A.default.weight',
+ 'base_model.model.model.layers.1.self_attn.q_proj.lora_B.default.weight', 'base_model.model.model.layers.1.self_attn.k_proj.weight', 'base_model.model.model.layers.1.self_attn.v_proj.wei
+ght', 'base_model.model.model.layers.1.self_attn.v_proj.lora_A.default.weight', 'base_model.model.model.layers.1.self_attn.v_proj.lora_B.default.weight', 'base_model.model.model.layers.1.
+self_attn.o_proj.weight', 'base_model.model.model.layers.1.self_attn.rotary_emb.inv_freq', 'base_model.model.model.layers.1.mlp.gate_proj.weight', 'base_model.model.model.layers.1.mlp.dow
+n_proj.weight', 'base_model.model.model.layers.1.mlp.up_proj.weight', 'base_model.model.model.layers.1.input_layernorm.weight', 'base_model.model.model.layers.1.post_attention_layernorm.w
+eight', 'base_model.model.model.layers.2.self_attn.q_proj.weight', 'base_model.model.model.layers.2.self_attn.q_proj.lora_A.default.weight', 'base_model.model.model.layers.2.self_attn.q_p
+roj.lora_B.default.weight', 'base_model.model.model.layers.2.self_attn.k_proj.weight', 'base_model.model.model.layers.2.self_attn.v_proj.weight', 'base_model.model.model.layers.2.self_att
+n.v_proj.lora_A.default.weight', 'base_model.model.model.layers.2.self_attn.v_proj.lora_B.default.weight', 'base_model.model.model.layers.2.self_attn.o_proj.weight', 'base_model.model.mod
+el.layers.2.self_attn.rotary_emb.inv_freq', 'base_model.model.model.layers.2.mlp.gate_proj.weight', 'base_model.model.model.layers.2.mlp.down_proj.weight', 'base_model.model.model.layers.
+2.mlp.up_proj.weight', 'base_model.model.model.layers.2.input_layernorm.weight', 'base_model.model.model.layers.2.post_attention_layernorm.weight', 'base_model.model.model.layers.3.self_a
+ttn.q_proj.weight', 'base_model.model.model.layers.3.self_attn.q_proj.lora_A.default.weight', 'base_model.model.model.layers.3.self_attn.q_proj.lora_B.default.weight', 'base_model.model.m
+odel.layers.3.self_attn.k_proj.weight', 'base_model.model.model.layers.3.self_attn.v_proj.weight', 'base_model.model.model.layers.3.self_attn.v_proj.lora_A.default.weight', 'base_model.mo
+del.model.layers.3.self_attn.v_proj.lora_B.default.weight', 'base_model.model.model.layers.3.self_attn.o_proj.weight', 'base_model.model.model.layers.3.self_attn.rotary_emb.inv_freq', 'ba
+se_model.model.model.layers.3.mlp.gate_proj.weight', 'base_model.model.model.layers.3.mlp.down_proj.weight', 'base_model.model.model.layers.3.mlp.up_proj.weight', 'base_model.model.model.
+layers.3.input_layernorm.weight', 'base_model.model.model.layers.3.post_attention_layernorm.weight', 'base_model.model.model.layers.4.self_attn.q_proj.weight', 'base_model.model.model.lay
+ers.4.self_attn.q_proj.lora_A.default.weight', 'base_model.model.model.layers.4.self_attn.q_proj.lora_B.default.weight', 'base_model.model.model.layers.4.self_attn.k_proj.weight', 'base_m
+odel.model.model.layers.4.self_attn.v_proj.weight', 'base_model.model.model.layers.4.self_attn.v_proj.lora_A.default.weight', 'base_model.model.model.layers.4.self_attn.v_proj.lora_B.defa
+ult.weight', 'base_model.model.model.layers.4.self_attn.o_proj.weight', 'base_model.model.model.layers.4.self_attn.rotary_emb.inv_freq', 'base_model.model.model.layers.4.mlp.gate_proj.wei
+ght', 'base_model.model.model.layers.4.mlp.down_proj.weight', 'base_model.model.model.layers.4.mlp.up_proj.weight', 'base_model.model.model.layers.4.input_layernorm.weight', 'base_model.m
+odel.model.layers.4.post_attention_layernorm.weight', 'base_model.model.model.layers.5.self_attn.q_proj.weight', 'base_model.model.model.layers.5.self_attn.q_proj.lora_A.default.weight', 
+'base_model.model.model.layers.5.self_attn.q_proj.lora_B.default.weight', 'base_model.model.model.layers.5.self_attn.k_proj.weight', 'base_model.model.model.layers.5.self_attn.v_proj.weig
+ht', 'base_model.model.model.layers.5.self_attn.v_proj.lora_A.default.weight', 'base_model.model.model.layers.5.self_attn.v_proj.lora_B.default.weight', 'base_model.model.model.layers.5.s
+elf_attn.o_proj.weight', 'base_model.model.model.layers.5.self_attn.rotary_emb.inv_freq', 'base_model.model.model.layers.5.mlp.gate_proj.weight', 'base_model.model.model.layers.5.mlp.down
+_proj.weight', 'base_model.model.model.layers.5.mlp.up_proj.weight', 'base_model.model.model.layers.5.input_layernorm.weight', 'base_model.model.model.layers.5.post_attention_layernorm.we
+ight', 'base_model.model.model.layers.6.self_attn.q_proj.weight', 'base_model.model.model.layers.6.self_attn.q_proj.lora_A.default.weight', 'base_model.model.model.layers.6.self_attn.q_pr
+oj.lora_B.default.weight', 'base_model.model.model.layers.6.self_attn.k_proj.weight', 'base_model.model.model.layers.6.self_attn.v_proj.weight', 'base_model.model.model.layers.6.self_attn
+.v_proj.lora_A.default.weight', 'base_model.model.model.layers.6.self_attn.v_proj.lora_B.default.weight', 'base_model.model.model.layers.6.self_attn.o_proj.weight', 'base_model.model.mode
+l.layers.6.self_attn.rotary_emb.inv_freq', 'base_model.model.model.layers.6.mlp.gate_proj.weight', 'base_model.model.model.layers.6.mlp.down_proj.weight', 'base_model.model.model.layers.6
+.mlp.up_proj.weight', 'base_model.model.model.layers.6.input_layernorm.weight', 'base_model.model.model.layers.6.post_attention_layernorm.weight', 'base_model.model.model.layers.7.self_at
+tn.q_proj.weight', 'base_model.model.model.layers.7.self_attn.q_proj.lora_A.default.weight', 'base_model.model.model.layers.7.self_attn.q_proj.lora_B.default.weight', 'base_model.model.mo
+del.layers.7.self_attn.k_proj.weight', 'base_model.model.model.layers.7.self_attn.v_proj.weight', 'base_model.model.model.layers.7.self_attn.v_proj.lora_A.default.weight', 'base_model.mod
+el.model.layers.7.self_attn.v_proj.lora_B.default.weight', 'base_model.model.model.layers.7.self_attn.o_proj.weight', 'base_model.model.model.layers.7.self_attn.rotary_emb.inv_freq', 'bas
+e_model.model.model.layers.7.mlp.gate_proj.weight', 'base_model.model.model.layers.7.mlp.down_proj.weight', 'base_model.model.model.layers.7.mlp.up_proj.weight', 'base_model.model.model.l
+ayers.7.input_layernorm.weight', 'base_model.model.model.layers.7.post_attention_layernorm.weight', 'base_model.model.model.layers.8.self_attn.q_proj.weight', 'base_model.model.model.laye
+rs.8.self_attn.q_proj.lora_A.default.weight', 'base_model.model.model.layers.8.self_attn.q_proj.lora_B.default.weight', 'base_model.model.model.layers.8.self_attn.k_proj.weight', 'base_mo
+del.model.model.layers.8.self_attn.v_proj.weight', 'base_model.model.model.layers.8.self_attn.v_proj.lora_A.default.weight', 'base_model.model.model.layers.8.self_attn.v_proj.lora_B.defau
+lt.weight', 'base_model.model.model.layers.8.self_attn.o_proj.weight', 'base_model.model.model.layers.8.self_attn.rotary_emb.inv_freq', 'base_model.model.model.layers.8.mlp.gate_proj.weig
+ht', 'base_model.model.model.layers.8.mlp.down_proj.weight', 'base_model.model.model.layers.8.mlp.up_proj.weight', 'base_model.model.model.layers.8.input_layernorm.weight', 'base_model.mo
+del.model.layers.8.post_attention_layernorm.weight', 'base_model.model.model.layers.9.self_attn.q_proj.weight', 'base_model.model.model.layers.9.self_attn.q_proj.lora_A.default.weight', '
+base_model.model.model.layers.9.self_attn.q_proj.lora_B.default.weight', 'base_model.model.model.layers.9.self_attn.k_proj.weight', 'base_model.model.model.layers.9.self_attn.v_proj.weigh
+t', 'base_model.model.model.layers.9.self_attn.v_proj.lora_A.default.weight', 'base_model.model.model.layers.9.self_attn.v_proj.lora_B.default.weight', 'base_model.model.model.layers.9.se
+lf_attn.o_proj.weight', 'base_model.model.model.layers.9.self_attn.rotary_emb.inv_freq', 'base_model.model.model.layers.9.mlp.gate_proj.weight', 'base_model.model.model.layers.9.mlp.down_
+proj.weight', 'base_model.model.model.layers.9.mlp.up_proj.weight', 'base_model.model.model.layers.9.input_layernorm.weight', 'base_model.model.model.layers.9.post_attention_layernorm.wei
+ght', 'base_model.model.model.layers.10.self_attn.q_proj.weight', 'base_model.model.model.layers.10.self_attn.q_proj.lora_A.default.weight', 'base_model.model.model.layers.10.self_attn.q_
+proj.lora_B.default.weight', 'base_model.model.model.layers.10.self_attn.k_proj.weight', 'base_model.model.model.layers.10.self_attn.v_proj.weight', 'base_model.model.model.layers.10.self
+_attn.v_proj.lora_A.default.weight', 'base_model.model.model.layers.10.self_attn.v_proj.lora_B.default.weight', 'base_model.model.model.layers.10.self_attn.o_proj.weight', 'base_model.mod
+el.model.layers.10.self_attn.rotary_emb.inv_freq', 'base_model.model.model.layers.10.mlp.gate_proj.weight', 'base_model.model.model.layers.10.mlp.down_proj.weight', 'base_model.model.mode
+l.layers.10.mlp.up_proj.weight', 'base_model.model.model.layers.10.input_layernorm.weight', 'base_model.model.model.layers.10.post_attention_layernorm.weight', 'base_model.model.model.lay
+ers.11.self_attn.q_proj.weight', 'base_model.model.model.layers.11.self_attn.q_proj.lora_A.default.weight', 'base_model.model.model.layers.11.self_attn.q_proj.lora_B.default.weight', 'bas
+e_model.model.model.layers.11.self_attn.k_proj.weight', 'base_model.model.model.layers.11.self_attn.v_proj.weight', 'base_model.model.model.layers.11.self_attn.v_proj.lora_A.default.weigh
+t', 'base_model.model.model.layers.11.self_attn.v_proj.lora_B.default.weight', 'base_model.model.model.layers.11.self_attn.o_proj.weight', 'base_model.model.model.layers.11.self_attn.rota
+ry_emb.inv_freq', 'base_model.model.model.layers.11.mlp.gate_proj.weight', 'base_model.model.model.layers.11.mlp.down_proj.weight', 'base_model.model.model.layers.11.mlp.up_proj.weight', 
+'base_model.model.model.layers.11.input_layernorm.weight', 'base_model.model.model.layers.11.post_attention_layernorm.weight', 'base_model.model.model.layers.12.self_attn.q_proj.weight', 
+'base_model.model.model.layers.12.self_attn.q_proj.lora_A.default.weight', 'base_model.model.model.layers.12.self_attn.q_proj.lora_B.default.weight', 'base_model.model.model.layers.12.sel
+f_attn.k_proj.weight', 'base_model.model.model.layers.12.self_attn.v_proj.weight', 'base_model.model.model.layers.12.self_attn.v_proj.lora_A.default.weight', 'base_model.model.model.layer
+s.12.self_attn.v_proj.lora_B.default.weight', 'base_model.model.model.layers.12.self_attn.o_proj.weight', 'base_model.model.model.layers.12.self_attn.rotary_emb.inv_freq', 'base_model.mod
+el.model.layers.12.mlp.gate_proj.weight', 'base_model.model.model.layers.12.mlp.down_proj.weight', 'base_model.model.model.layers.12.mlp.up_proj.weight', 'base_model.model.model.layers.12
+.input_layernorm.weight', 'base_model.model.model.layers.12.post_attention_layernorm.weight', 'base_model.model.model.layers.13.self_attn.q_proj.weight', 'base_model.model.model.layers.13
+.self_attn.q_proj.lora_A.default.weight', 'base_model.model.model.layers.13.self_attn.q_proj.lora_B.default.weight', 'base_model.model.model.layers.13.self_attn.k_proj.weight', 'base_mode
+l.model.model.layers.13.self_attn.v_proj.weight', 'base_model.model.model.layers.13.self_attn.v_proj.lora_A.default.weight', 'base_model.model.model.layers.13.self_attn.v_proj.lora_B.defa
+ult.weight', 'base_model.model.model.layers.13.self_attn.o_proj.weight', 'base_model.model.model.layers.13.self_attn.rotary_emb.inv_freq', 'base_model.model.model.layers.13.mlp.gate_proj.
+weight', 'base_model.model.model.layers.13.mlp.down_proj.weight', 'base_model.model.model.layers.13.mlp.up_proj.weight', 'base_model.model.model.layers.13.input_layernorm.weight', 'base_m
+odel.model.model.layers.13.post_attention_layernorm.weight', 'base_model.model.model.layers.14.self_attn.q_proj.weight', 'base_model.model.model.layers.14.self_attn.q_proj.lora_A.default.
+weight', 'base_model.model.model.layers.14.self_attn.q_proj.lora_B.default.weight', 'base_model.model.model.layers.14.self_attn.k_proj.weight', 'base_model.model.model.layers.14.self_attn
+.v_proj.weight', 'base_model.model.model.layers.14.self_attn.v_proj.lora_A.default.weight', 'base_model.model.model.layers.14.self_attn.v_proj.lora_B.default.weight', 'base_model.model.mo
+del.layers.14.self_attn.o_proj.weight', 'base_model.model.model.layers.14.self_attn.rotary_emb.inv_freq', 'base_model.model.model.layers.14.mlp.gate_proj.weight', 'base_model.model.model.
+layers.14.mlp.down_proj.weight', 'base_model.model.model.layers.14.mlp.up_proj.weight', 'base_model.model.model.layers.14.input_layernorm.weight', 'base_model.model.model.layers.14.post_a
+ttention_layernorm.weight', 'base_model.model.model.layers.15.self_attn.q_proj.weight', 'base_model.model.model.layers.15.self_attn.q_proj.lora_A.default.weight', 'base_model.model.model.
+layers.15.self_attn.q_proj.lora_B.default.weight', 'base_model.model.model.layers.15.self_attn.k_proj.weight', 'base_model.model.model.layers.15.self_attn.v_proj.weight', 'base_model.mode
+l.model.layers.15.self_attn.v_proj.lora_A.default.weight', 'base_model.model.model.layers.15.self_attn.v_proj.lora_B.default.weight', 'base_model.model.model.layers.15.self_attn.o_proj.we
+ight', 'base_model.model.model.layers.15.self_attn.rotary_emb.inv_freq', 'base_model.model.model.layers.15.mlp.gate_proj.weight', 'base_model.model.model.layers.15.mlp.down_proj.weight', 
+'base_model.model.model.layers.15.mlp.up_proj.weight', 'base_model.model.model.layers.15.input_layernorm.weight', 'base_model.model.model.layers.15.post_attention_layernorm.weight', 'base
+_model.model.model.layers.16.self_attn.q_proj.weighThere were unexpected keys in the checkpoint model loaded: ['base_model.model.model.layers.0.self_attn.q_proj.lora_A.weight', 'base_mode
+l.model.model.layers.0.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.0.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.0.self_attn.v_proj.lora_B.weight',
+ 'base_model.model.model.layers.1.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.1.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.1.self_attn.v_proj.lora
+_A.weight', 'base_model.model.model.layers.1.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.2.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.2.self_attn.
+q_proj.lora_B.weight', 'base_model.model.model.layers.2.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.2.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.3
+.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.3.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.3.self_attn.v_proj.lora_A.weight', 'base_model.model.mod
+el.layers.3.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.4.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.4.self_attn.q_proj.lora_B.weight', 'base_mode
+l.model.model.layers.4.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.4.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.5.self_attn.q_proj.lora_A.weight',
+ 'base_model.model.model.layers.5.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.5.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.5.self_attn.v_proj.lora
+_B.weight', 'base_model.model.model.layers.6.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.6.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.6.self_attn.
+v_proj.lora_A.weight', 'base_model.model.model.layers.6.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.7.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.7
+.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.7.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.7.self_attn.v_proj.lora_B.weight', 'base_model.model.mod
+el.layers.8.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.8.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.8.self_attn.v_proj.lora_A.weight', 'base_mode
+l.model.model.layers.8.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.9.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.9.self_attn.q_proj.lora_B.weight',
+ 'base_model.model.model.layers.9.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.9.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.10.self_attn.q_proj.lor
+a_A.weight', 'base_model.model.model.layers.10.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.10.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.10.self_a
+ttn.v_proj.lora_B.weight', 'base_model.model.model.layers.11.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.11.self_attn.q_proj.lora_B.weight', 'base_model.model.model.la
+yers.11.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.11.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.12.self_attn.q_proj.lora_A.weight', 'base_model.
+model.model.layers.12.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.12.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.12.self_attn.v_proj.lora_B.weight'
+, 'base_model.model.model.layers.13.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.13.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.13.self_attn.v_proj.
+lora_A.weight', 'base_model.model.model.layers.13.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.14.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.14.sel
+f_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.14.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.14.self_attn.v_proj.lora_B.weight', 'base_model.model.model
+.layers.15.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.15.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.15.self_attn.v_proj.lora_A.weight', 'base_mod
+el.model.model.layers.15.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.16.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.16.self_attn.q_proj.lora_B.weig
+ht', 'base_model.model.model.layers.16.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.16.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.17.self_attn.q_pr
+oj.lora_A.weight', 'base_model.model.model.layers.17.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.17.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.17.
+self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.18.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.18.self_attn.q_proj.lora_B.weight', 'base_model.model.mo
+del.layers.18.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.18.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.19.self_attn.q_proj.lora_A.weight', 'base_
+model.model.model.layers.19.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.19.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.19.self_attn.v_proj.lora_B.w
+eight', 'base_model.model.model.layers.20.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.20.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.20.self_attn.v
+_proj.lora_A.weight', 'base_model.model.model.layers.20.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.21.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.
+21.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.21.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.21.self_attn.v_proj.lora_B.weight', 'base_model.model
+.model.layers.22.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.22.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.22.self_attn.v_proj.lora_A.weight', 'ba
+se_model.model.model.layers.22.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.23.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.23.self_attn.q_proj.lora_
+B.weight', 'base_model.model.model.layers.23.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.23.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.24.self_att
+n.q_proj.lora_A.weight', 'base_model.model.model.layers.24.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.24.self_attn.v_proj.lora_A.weight', 'base_model.model.model.laye
+rs.24.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.25.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.25.self_attn.q_proj.lora_B.weight', 'base_model.mo
+del.model.layers.25.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.25.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.26.self_attn.q_proj.lora_A.weight', 
+'base_model.model.model.layers.26.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.26.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.26.self_attn.v_proj.lo
+ra_B.weight', 'base_model.model.model.layers.27.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.27.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.27.self_
+attn.v_proj.lora_A.weight', 'base_model.model.model.layers.27.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.28.self_attn.q_proj.lora_A.weight', 'base_model.model.model.l
+ayers.28.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.28.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.28.self_attn.v_proj.lora_B.weight', 'base_model
+.model.model.layers.29.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.29.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.29.self_attn.v_proj.lora_A.weight
+', 'base_model.model.model.layers.29.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.30.self_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.30.self_attn.q_proj
+.lora_B.weight', 'base_model.model.model.layers.30.self_attn.v_proj.lora_A.weight', 'base_model.model.model.layers.30.self_attn.v_proj.lora_B.weight', 'base_model.model.model.layers.31.se
+lf_attn.q_proj.lora_A.weight', 'base_model.model.model.layers.31.self_attn.q_proj.lora_B.weight', 'base_model.model.model.layers.31.self_attn.v_proj.lora_A.weight', 'base_model.model.mode
+l.layers.31.self_attn.v_proj.lora_B.weight'].
+{'train_runtime': 5393.1283, 'train_samples_per_second': 2.373, 'train_steps_per_second': 0.037, 'train_loss': 0.3045668613910675, 'epoch': 200.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 200/200 [1:29:53<00:00, 26.97s/it] 
+
+ If there's a warning about missing keys above, please disregard :)
